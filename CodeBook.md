@@ -152,6 +152,6 @@ After that I load activities names and put them into the main table using "merge
 
 Last step is to calculate average values of all variables for each aeach activity/subject combination. It is done by using "aggregate()" function.
 
-After some cleanup (removing unnecessary columns) tidy dataset is written to disk. I've used ".csv" format because it is usually more easily to import it into the spreadsheet application (that I use a lot) than plain text one.
+After some cleanup (removing unnecessary columns) tidy dataset is written to disk.
 
 A final tidy dataset is then returned from function to the caller.
