@@ -140,4 +140,18 @@ fBodyBodyGyroJerkMag-std()	 - an average value of 	fBodyBodyGyroJerkMag-std()	va
 
 ##Script logic##
 
+First lines of the script are devoted to loading data from the downloaded files. It is loading train dataset first and immediately crerates a verbose column names based on the variable names loaded from the file "features.txt"). Then this procedure is repeated with test dataset.
 
+After that script loads subjects and activities names for train and test datasets and merges them with the data files using "cbind()" function.
+
+Next step is to merge test and train datasets. It is done by using "rbind()".
+
+From merged dataset a necessary columns (containing measurements on the mean and standard deviation for each measurement) are extracted. I use "grepl("mean\\(\\)|std\\(\\)|activities|subjects", colnames(all_data))" command to get a logical vector indicating what columns are to be get to the resulting dataset. Please note that only columns which names contain "mean()" and "std()" (and of course "activities" and "subjects") are chosen. Columns with "meanFreq" and so on are discarded. It is not an error as you can read here: https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/
+
+After that I load activities names and put them into the main table using "merge()" function.
+
+Last step is to calculate average values of all variables for each aeach activity/subject combination. It is done by using "aggregate()" function.
+
+After some cleanup (removing unnecessary columns) tidy dataset is written to disk. I've used ".csv" format because it is usually more easily to import it into the spreadsheet application (that I use a lot) than plain text one.
+
+A final tidy dataset is then returned from function to the caller.
