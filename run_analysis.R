@@ -1,4 +1,4 @@
-run_analyis <- function(){
+run_analysis <- function(){
 #Loading train dataset
 train <- read.table("./UCI HAR Dataset/train/X_train.txt")
 #Making column names comprehensible
