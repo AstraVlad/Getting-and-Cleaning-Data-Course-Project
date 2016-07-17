@@ -40,6 +40,6 @@ agg_output<-aggregate(mean_std_data, list(activity = mean_std_data$activity_name
 agg_output <- select(agg_output, -(3:4))
 agg_output <- select(agg_output, -69)
 #Writing data do disk
-write.csv(agg_output, "output.csv")
+write.table(agg_output, "output.txt", row.names = FALSE)
 agg_output
 }
