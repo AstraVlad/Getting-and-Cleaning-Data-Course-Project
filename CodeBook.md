@@ -1,4 +1,7 @@
 #Code book#
+
+##Variable names##
+
 activity - an activity name		
 
 subject	 - a test subject number		
@@ -134,3 +137,7 @@ fBodyBodyGyroMag-std()	 - an average value of 	fBodyBodyGyroMag-std()	variable f
 fBodyBodyGyroJerkMag-mean()	 - an average value of 	fBodyBodyGyroJerkMag-mean()	variable for specified subject and activity
 
 fBodyBodyGyroJerkMag-std()	 - an average value of 	fBodyBodyGyroJerkMag-std()	variable for specified subject and activity
+
+##Script logic##
+
+
